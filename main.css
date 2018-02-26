@@ -1,6 +1,17 @@
+/*font-family: 'Alegreya Sans', sans-serif;
+font-family: 'Alegreya Sans SC', sans-serif;
+*/
+
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
 .bg-image:before {
   content: "";
   position: fixed;
+  width: 110%;
+  height: 110%;
   top: -5%;
   left: -5%;
   right: 0;
@@ -8,19 +19,17 @@
   z-index: -1;
   
   display: block;
-  background: url(https://i.imgur.com/tSFsiHI.png) no-repeat center center;
+  background: url(http://u.cubeupload.com/bobbywestman/Wnru4b.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size:cover;
-  width: 110%;
-  height: 110%;
-
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  
+  /*-webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);*/
 }
 
 .bg-image {
@@ -28,16 +37,20 @@
   position: relative;
 }
 
-/*html { 
-  background: url(https://i.imgur.com/tSFsiHI.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.title-screen {
+  width: 100%;
+  height: 100%;
+}
 
-  -webkit-filter: blur(7px);
-  -moz-filter: blur(7px);
-  -o-filter: blur(7px);
-  -ms-filter: blur(7px);
-  filter: blur(7px);
-}*/
+.title-screen h1 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 34px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}
