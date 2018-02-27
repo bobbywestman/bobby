@@ -22,12 +22,8 @@ html,body {
   bottom: -5%;
   z-index: -1;
   display: block;
-<<<<<<< HEAD
-  
   background: url(http://u.cubeupload.com/bobbywestman/dDab1W.jpg) no-repeat center center;
-=======
-  background: url(http://u.cubeupload.com/bobbywestman/AYzlzA.jpg) no-repeat center center;
->>>>>>> f78a9973c6e7357ac2323b495e70992a802e3c83
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -59,13 +55,9 @@ html,body {
   right: 50%;
   bottom: 50%;
   transform: translate(50%, 50%);
-<<<<<<< HEAD
 
   font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 75px;
   font-weight: 100;
   color: white;
 }
-=======
-}
->>>>>>> f78a9973c6e7357ac2323b495e70992a802e3c83
