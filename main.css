@@ -2,55 +2,62 @@
 font-family: 'Alegreya Sans SC', sans-serif;
 */
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,body {
   width: 100%;
   height: 100%;
 }
 
-.bg-image:before {
+.bg-image::before {
+  /*use ::before selector to add resizable background image before empty div*/
+  /*resize 5% bigger on all sides to remove ugly white border caused by blur filter*/
   content: "";
   position: fixed;
-  width: 110%;
-  height: 110%;
   top: -5%;
   left: -5%;
-  right: 0;
-  bottom: 0;
+  right: -5%;
+  bottom: -5%;
   z-index: -1;
-  
   display: block;
-  background: url(http://u.cubeupload.com/bobbywestman/Wnru4b.jpg) no-repeat center center;
+  
+  background: url(http://u.cubeupload.com/bobbywestman/dDab1W.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size:cover;
   
-  /*-webkit-filter: blur(3px);
+  -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -o-filter: blur(3px);
   -ms-filter: blur(3px);
-  filter: blur(3px);*/
+  filter: blur(3px);
 }
-
-.bg-image {
+/*.bg-image {
   overflow: auto;
   position: relative;
-}
+}*/
 
 .title-screen {
+  /*full-screen div*/
   width: 100%;
   height: 100%;
+  position: static;
 }
 
 .title-screen h1 {
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 34px;
-  color: white;
-  font-weight: 300;
-  text-align: center;
+  /*absolute inside a full-screen div*/
+  position: absolute; 
 
-  position: absolute;
+  text-align: center;
   right: 50%;
   bottom: 50%;
   transform: translate(50%, 50%);
+
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 75px;
+  font-weight: 100;
+  color: white;
 }
