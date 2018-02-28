@@ -8,7 +8,7 @@
 });*/
 
 $(window).on('load', function () {
-	setTimeout(fadeInTitle, 1250);
+	setTimeout(fadeInTitle, 650);
 });
 
 //use this to add a delay to the animation, only after window loads

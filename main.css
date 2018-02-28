@@ -71,7 +71,7 @@ html,body {
 
 .fade-in-title { 
   /*set delay to 0s here, will be handled in js*/
-  animation: fade-in 5s ease 0s 1 forwards;
+  animation: fade-in 3s ease 0s 1 forwards;
 }
 
 @keyframes fade-in {
