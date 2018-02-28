@@ -6,3 +6,12 @@
 		}, 1500);
 	});
 });*/
+
+$(window).on('load', function () {
+	setTimeout(fadeInTitle, 1250);
+});
+
+//use this to add a delay to the animation, only after window loads
+var fadeInTitle = function() {
+	$("#title").addClass("fade-in-title");
+};

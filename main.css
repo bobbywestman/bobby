@@ -1,7 +1,15 @@
-/*font-family: 'Alegreya Sans', sans-serif;
-font-family: 'Alegreya Sans SC', sans-serif;
+/**********************************************************/
+/*notes*/
+/**********************************************************/
+
+/*
+animation: name duration timing delay iterations direction fill-mode play-state
+defauls: none 0 ease 0 1 normal none running
 */
 
+/**********************************************************/
+/*globals*/
+/**********************************************************/
 ::-webkit-scrollbar {
   display: none;
 }
@@ -11,6 +19,9 @@ html,body {
   height: 100%;
 }
 
+/**********************************************************/
+/*background image*/
+/**********************************************************/
 .bg-image::before {
   /*use ::before selector to add resizable background image before empty div*/
   /*resize 5% bigger on all sides to remove ugly white border caused by blur filter*/
@@ -22,29 +33,24 @@ html,body {
   bottom: -5%;
   z-index: -1;
   display: block;
-  background: url(http://u.cubeupload.com/bobbywestman/dDab1W.jpg) no-repeat center center;
 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background: url(http://u.cubeupload.com/bobbywestman/dDab1W.jpg) no-repeat center center;
   background-size:cover;
-  
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
   filter: blur(3px);
 }
+
 /*.bg-image {
   overflow: auto;
   position: relative;
 }*/
 
+/**********************************************************/
+/*title screen*/
+/**********************************************************/
 .title-screen {
   /*full-screen div*/
   width: 100%;
   height: 100%;
-  position: static;
 }
 
 .title-screen h1 {
@@ -60,4 +66,15 @@ html,body {
   font-size: 75px;
   font-weight: 100;
   color: white;
+  opacity: 0;
+}
+
+.fade-in-title { 
+  /*set delay to 0s here, will be handled in js*/
+  animation: fade-in 5s ease 0s 1 forwards;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
