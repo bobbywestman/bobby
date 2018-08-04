@@ -1,17 +1,14 @@
-//scroll to element on click
-/*$(document).ready(function (){
-	$("#clickthis").click(function (){
-		$('html, body').animate({
-			scrollTop: $("#scrolltothis").offset().top
-		}, 1500);
-	});
-});*/
+window.onload = function () {
+    setTimeout(fadeInTitle, 650);
+}
 
-$(window).on('load', function () {
-	setTimeout(fadeInTitle, 650);
-});
-
-//use this to add a delay to the animation, only after window loads
 var fadeInTitle = function() {
-	$("#title").addClass("fade-in-title");
+    var title = document.getElementById("title");
+    title.classList.add("fadeInTitle");
+    setTimeout(fadeInCarrot, 650);
+};
+
+var fadeInCarrot = function() {
+    var carrot = document.getElementById("carrot");
+    carrot.classList.add("fadeInCarrot");
 };
