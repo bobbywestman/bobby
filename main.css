@@ -10,8 +10,12 @@ defaults: none 0 ease 0 1 normal none running
 /**********************************************************/
 /*globals*/
 /**********************************************************/
-::-webkit-scrollbar {
-    display: none;
+/*::-webkit-scrollbar {
+    /*display: none;*/
+}*/
+
+* {
+    box-sizing: border-box;
 }
 
 html, body {
@@ -53,24 +57,27 @@ html, body {
     height: 100%;
 }
 
-.titleScreen .title {
-    /*absolute inside a full-screen div*/
+.title {
     position: absolute; 
 
     text-align: center;
-    right: 50%;
+    /*right: 50%;*/
     bottom: 50%;
-    transform: translate(50%, 50%);
+    transform: translate(0%, 50%);
 
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 75px;
+    /*font-size: 4em;*/
     font-weight: 100;
     color: white;
     opacity: 0;
+
+    width:100%;
 }
 
-.titleScreen .carrot {
-    /*absolute inside a full-screen div*/
+
+
+.arrow {
     position: absolute; 
 
     text-align: center;
@@ -78,17 +85,10 @@ html, body {
     bottom: 10%;
     transform: translate(50%, 0%);
 
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 35px;
-    font-weight: 300;
     color: white;
     opacity: 0;
 
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
+    width: 70px;
 }
 
 .fadeInTitle { 
@@ -96,7 +96,7 @@ html, body {
     animation: fadeIn 3s ease 0s 1 forwards;
 }
 
-.fadeInCarrot { 
+.fadeInArrow { 
     /*set delay to 0s here, will be handled in js*/
     animation: fadeIn 2s ease 0s 1 forwards;
 }
@@ -107,8 +107,45 @@ html, body {
 }
 
 /**********************************************************/
-/*project grid*/
+/*projects*/
 /**********************************************************/
-.projectGrid {
+.projects {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.projectsTitle {
+    text-align: center;
+
+    /*background-color: #6c6d6d;*/
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 45px;
+    font-weight: 300;
+    color: white;
+    /*opacity: 0;*/
+
+    /*display: block;*/
+}
+
+.projectsGrid {
+    margin-top: 30px;
     width: 100%;
+    /*display: block;*/
+    /*background-color: #efefef;*/
+}
+
+.projectsGrid::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.projectImgContainer {
+    float: left;
+    width: 33.33%;
+    /*padding: 15px;*/
+}
+
+.projectImg {
+    width:100%;
 }

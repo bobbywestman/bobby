@@ -1,3 +1,4 @@
+
 window.onload = function () {
     setTimeout(fadeInTitle, 650);
 }
@@ -5,10 +6,26 @@ window.onload = function () {
 var fadeInTitle = function() {
     var title = document.getElementById("title");
     title.classList.add("fadeInTitle");
-    setTimeout(fadeInCarrot, 650);
+    setTimeout(fadeInArrow, 650);
 };
 
-var fadeInCarrot = function() {
-    var carrot = document.getElementById("carrot");
-    carrot.classList.add("fadeInCarrot");
+var fadeInArrow = function() {
+    var arrow = document.getElementById("arrow");
+    arrow.classList.add("fadeInArrow");
+};
+
+window.onscroll = function(){
+    // showHideArrow()
+};
+
+function showHideArrow()
+{
+    var scrollBarPosition = window.pageYOffset | document.body.scrollTop;
+
+    if(scrollBarPosition > window.innerHeight * .4) {
+        document.getElementById('arrow').style.visibility = "hidden";
+    }
+    else {
+        document.getElementById('arrow').style.visibility = "visible";
+    }
 };
