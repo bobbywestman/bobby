@@ -74,6 +74,26 @@ html, body {
     width:100%;
 }
 
+.bow {
+    /*position: absolute; 
+    text-align: center;
+    right: 50%;
+    top: 10%;
+    transform: translate(50%, 0%);
+    color: white;
+    width: 60px;
+    opacity: 0;*/
+
+    position: absolute; 
+    text-align: center;
+    right: 50%;
+    bottom: 10%;
+    transform: translate(50%, 0%);
+    color: white;
+    opacity: 0;
+    width: 60px;
+}
+
 .arrow {
     position: absolute; 
 
@@ -85,7 +105,9 @@ html, body {
     color: white;
     opacity: 0;
 
-    width: 70px;
+    width: 60px;
+
+    /*right: 10%;*/
 }
 
 .fadeInTitle { 
@@ -189,5 +211,19 @@ html, body {
     top: 10%;
     transform: translate(50%, 0%);
     color: white;
-    width: 70px;
+    width: 60px;
+
+    /*right: 10%;*/
+}
+
+.arrows {
+    position: absolute; 
+    text-align: center;
+    right: 50%;
+    bottom: 10%;
+    transform: translate(50%, 0%);
+    color: white;
+    width: 60px;
+
+    /*right: 10%;*/
 }
