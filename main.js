@@ -31,3 +31,14 @@ function showHideArrow()
         document.getElementById('arrow').style.visibility = "visible";
     }
 };
+
+// var background = document.getElementById('bgImage');
+// background.style.top = 'auto';
+// background.style.bottom = 0;
+
+// window.onresize = sizeBackground;
+// sizeBackground();
+
+// function sizeBackground() {
+//   background.style.height = screen.height;
+// }
