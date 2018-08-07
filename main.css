@@ -33,13 +33,13 @@ html, body {
   left: 0; 
 
   /* Preserve aspect ratio */
-  min-width: 120%;
-  min-height: 120%;
+  min-width: 180%;
+  min-height: 180%;
 
-   top: -10%;
-   left: -10%;
-    right: -10%;
-    bottom: -10%;
+   top: -40%;
+   left: -40%;
+    right: -40%;
+    bottom: -40%;
     z-index: -1;
     filter: blur(3px);
 }
