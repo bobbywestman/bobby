@@ -26,7 +26,8 @@ html, body {
 /**********************************************************/
 /*background image*/
 /**********************************************************/
-.bgImage::before {
+.bgImage {
+/*.bgImage::before {*/
     /*use ::before selector to add resizable background image before empty div*/
     /*resize 5% bigger on all sides to remove ugly white border caused by blur filter*/
     content: "";

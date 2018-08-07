@@ -32,13 +32,13 @@ function showHideArrow()
     }
 };
 
-// var background = document.getElementById('bgImage');
-// background.style.top = 'auto';
-// background.style.bottom = 0;
+var background = document.getElementById('bgImage');
+background.style.top = 'auto';
+background.style.bottom = 0;
 
-// window.onresize = sizeBackground;
-// sizeBackground();
+window.onresize = sizeBackground;
+sizeBackground();
 
-// function sizeBackground() {
-//   background.style.height = screen.height;
-// }
+function sizeBackground() {
+  background.style.height = screen.height;
+}
