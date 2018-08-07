@@ -28,11 +28,10 @@ html, body {
 /**********************************************************/
 
 #bg {
-  position: fixed; 
+/*  position: fixed; 
   top: 0; 
   left: 0; 
 
-  /* Preserve aspect ratio */
   min-width: 180%;
   min-height: 180%;
 
@@ -41,14 +40,27 @@ html, body {
     right: -40%;
     bottom: -40%;
     z-index: -1;
+    filter: blur(3px);*/
+
+    position: fixed; 
+  bottom: 0; 
+  left: 0; 
+
+  /* Preserve aspect ratio */
+  min-width: 110%;
+  min-height: 110%;
+
+   top: -5%;
+   left: -5%;
+    right: -5%;
+    bottom: -5%;
+    z-index: -1;
     filter: blur(3px);
 }
 
-/*.bgImage {*/
+.bgImage {
 /*.bgImage::before {*/
-    /*use ::before selector to add resizable background image before empty div*/
-    /*resize 5% bigger on all sides to remove ugly white border caused by blur filter*/
-    /*content: "";
+    content: "";
     position: fixed;
     top: -5%;
     left: -5%;
@@ -61,8 +73,8 @@ html, body {
     background-size:cover;
     filter: blur(3px);
 
-    transform: translate3d(0,0,0);*/
-/*}*/
+    transform: translate3d(0,0,0);
+}
 
 /*.bgImage {
     overflow: auto;
