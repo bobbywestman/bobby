@@ -1,6 +1,17 @@
+var background = document.getElementById("bg");
+sizeBackground();
 
 window.onload = function () {
     setTimeout(fadeInTitle, 650);
+}
+
+window.onresize = function () {
+    sizeBackground();
+}
+
+function sizeBackground() {
+    background.style.minHeight = 1.1*window.innerHeight + "px";
+    background.style.minWidth = 1.1*window.innerWidth + "px";
 }
 
 var fadeInTitle = function() {
@@ -32,13 +43,4 @@ function showHideArrow()
     }
 };
 
-// var background = document.getElementById('bgImage');
-// background.style.top = 'auto';
-// background.style.bottom = 0;
 
-// window.onresize = sizeBackground;
-// sizeBackground();
-
-// function sizeBackground() {
-//   background.style.height = screen.height;
-// }

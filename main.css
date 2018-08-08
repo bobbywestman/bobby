@@ -27,7 +27,7 @@ html, body {
 /*background image*/
 /**********************************************************/
 
-#bg {
+.bg {
 /*  position: fixed; 
   top: 0; 
   left: 0; 
@@ -43,17 +43,24 @@ html, body {
     filter: blur(3px);*/
 
     position: fixed; 
-  bottom: 0; 
-  left: 0; 
+    bottom: -5%; 
+    left: -5%; 
+    top: auto;
+    right: auto;
+    /*right: auto;*/
+    background: url(images/bg.jpg) no-repeat;
+    background-size: cover;
 
+    /*top: 0;*/
+    /*width: 110%;*/
+    /*height: 110%;*/
   /* Preserve aspect ratio */
-  min-width: 110%;
-  min-height: 110%;
-
-   top: -5%;
+  /*min-width: 110%;
+  min-height: 110%;*/
+   /*top: -5%;
    left: -5%;
     right: -5%;
-    bottom: -5%;
+    bottom: -5%;*/
     z-index: -1;
     filter: blur(3px);
 }
