@@ -33,9 +33,11 @@ html, body {
 /*background image*/
 /**********************************************************/
 .bg {
+    /*use vh/vw on this*/
+
     position: fixed; 
     background: url(images/bg.jpg) no-repeat;
-    background-color: #1e1eff;
+    background-color: #46545E;
     background-size: cover;
 
     bottom: -1vh;
