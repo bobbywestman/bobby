@@ -1,18 +1,18 @@
-var background = document.getElementById("bg");
-sizeBackground();
+// var background = document.getElementById("bg");
+// sizeBackground();
 
 window.onload = function () {
     setTimeout(fadeInTitle, 650);
 }
 
-window.onresize = function () {
-    sizeBackground();
-}
+// window.onresize = function () {
+//     sizeBackground();
+// }
 
-function sizeBackground() {
-    background.style.minHeight = 1.1*window.outerHeight + "px";
-    background.style.minWidth = 1.1*window.innerWidth + "px";
-}
+// function sizeBackground() {
+//     background.style.minHeight = 1.1*window.outerHeight + "px";
+//     background.style.minWidth = 1.1*window.innerWidth + "px";
+// }
 
 var fadeInTitle = function() {
     var title = document.getElementById("title");
