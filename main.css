@@ -19,7 +19,7 @@ defaults: none 0 ease 0 1 normal none running
 }
 
 html, body {
-    width: 100vw;
+    width: 100vh;
     height: 100vh;
 }
 
@@ -43,15 +43,21 @@ html, body {
     filter: blur(3px);*/
 
     position: fixed; 
-    bottom: -5%; 
+    /*bottom: -5%; 
     left: -5%; 
     top: auto;
-    right: auto;
+    right: auto;*/
     /*right: auto;*/
     background: url(images/bg.jpg) no-repeat;
     background-size: cover;
-    min-width: 110vw;
-    min-height: 110vh;
+    /*min-width: 110vw;
+    min-height: 110vh;*/
+
+    width: 100%;
+    height: 100%;
+    bottom: 50%;
+    transform: translate(0%, 50%);
+
     /*top: 0;*/
     /*width: 110%;*/
     /*height: 110%;*/
