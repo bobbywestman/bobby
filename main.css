@@ -25,7 +25,7 @@ html, body {
         - on android chrome: spans entire view as if url bar is hidden (think safari on iphone does the same thing according to above link -- untested) 
         - this fix prevents the background jumping around when scrolling on a mobile device 
     */
-    width: 100vw;
+    width: 100vh;
     height: 100vh;
 }
 
@@ -34,7 +34,8 @@ html, body {
 /**********************************************************/
 .bg {
     position: fixed; 
-    background: url(images/bg.jpg) no-repeat;
+    /*background: url(images/bg.jpg) no-repeat;*/
+    background-color: #1e1e1e;
     background-size: cover;
     width: 102%;
     height: 102%;
