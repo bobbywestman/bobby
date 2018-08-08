@@ -10,7 +10,7 @@ window.onresize = function () {
 }
 
 function sizeBackground() {
-    background.style.minHeight = 1.1*window.innerHeight + "px";
+    background.style.minHeight = 1.1*window.outerHeight + "px";
     background.style.minWidth = 1.1*window.innerWidth + "px";
 }
 
