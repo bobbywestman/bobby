@@ -35,7 +35,7 @@ html, body {
 .bg {
     position: fixed; 
     /*background: url(images/bg.jpg) no-repeat;*/
-    background-color: #1e1e1e;
+    background-color: #1e1eff;
     background-size: cover;
     /*width: 102%;
     height: 102%;
