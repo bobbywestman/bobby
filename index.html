@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="main.css" type="text/css">
 
     <!--todo: remove unused imports-->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i|Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i|Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
 
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Alegreya+Sans:300" rel="stylesheet">
 </head>
 <body>
     <div id="bg" class="bg"></div>
@@ -32,15 +30,26 @@
         <div id="projectsTitle" class="projectsTitle">
             Projects
         </div>
-        <div id="projectsGrid" class="projectsGrid">
-            <div class="projectImgContainer">
+        <div class="projectsGrid" id="projectsGrid">
+            <div class="projectImgContainer" id="musicVisualizer">
                 <img src="images/musicVisualizer.png" alt="three.js music visualizer" class="projectImg">
             </div>
-            <div class="projectImgContainer">
+            <div class="projectImgContainer" id="flappyKanye">
                 <img src="images/flappyKanye.png" alt="flappy kanye" class="projectImg">
             </div>
-            <div class="projectImgContainer">
+            <div class="projectImgContainer"  id="aethera">
                 <img src="images/aethera.png" alt="aethera" class="projectImg">
+            </div>
+
+            <!-- blobsmusic? -->
+            <!-- aaconcrete? -->
+        </div>
+
+        <div class="focusedProject" id="focusedProject">
+            <div class="focusedProjectDetails" id="focusedProjectDetails">
+                <div class="focusedProjectDetailsView">
+                    asdasdasd<br>asdasdasd<br>asdasdasd<br>asdasdasd<br>asdasdasd<br>asdasdasd<br>asdasdasd
+                </div>
             </div>
         </div>
     </div>
@@ -50,11 +59,6 @@
 
         </div>
     </div>
-
-   <!--  <div class="about">
-        About Me
-
-    </div> -->
 
     <div class="contact">
         <img src="images/arrow.png" id="arrow2" class="arrow2">

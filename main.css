@@ -165,17 +165,51 @@ html, body {
     display: table;
 }
 
+.focusedProject {
+    opacity: 0;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.focusedProject::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.focusedProjectDetails {
+    float: left;
+    width: 66.666666%;
+    padding: 15px;
+}
+
+.focusedProjectDetailsView {
+    width:100%;
+    background-color: #efefef38;
+}
+
 .projectImgContainer {
     float: left;
     width: 33.333333%;
     padding: 15px;
-    /*margin-bottom: 100px;*/
 }
 
 .projectImg {
     width:100%;
-    background-color: #efefef38
+    background-color: #efefef38;
 }
+
+/*
+div {
+    opacity:1;
+    transition: all 2s ease-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+*/
 
 /**********************************************************/
 /*contact*/
