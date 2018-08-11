@@ -52,7 +52,6 @@ window.onload = function() {
 /**********************************************************/
 /*projects*/
 /**********************************************************/
-
 var setupProjectTiles = function() {
     for(var p in projects) {
         var tile = document.getElementById(projects[p].id);
@@ -61,10 +60,6 @@ var setupProjectTiles = function() {
             return function() { projectClicked(projects[p]); }
         })(p);
     }
-
-    var focus = document.getElementById("focusedProject");
-    focus.style.opacity = 1;
-    focus.style.display = "none";
 };
 
 var aProjectIsCurrentlySelected = false;
@@ -85,6 +80,9 @@ var projectClicked = function(project) {
         aProjectIsCurrentlySelected = true;
         
         var copy = document.getElementById(project.id).cloneNode(true);
+        copy.style.removeProperty("float");
+        copy.style.float = "";
+
         //reattach click event on clone.. this is messy
         copy.onclick = (function(project) {
             return function() { projectClicked(projects[project]); }
@@ -92,7 +90,7 @@ var projectClicked = function(project) {
         focus.insertBefore(copy, focus.firstChild);
         
         grid.style.display = "none";
-        focus.style.display = "block";
+        focus.style.display = "flex";
     }
 };
 
