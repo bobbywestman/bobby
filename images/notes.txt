@@ -1,0 +1,10 @@
+image sizes: 700x700
+image formats: png
+
+when resizing s9 mockup:
+remove shadow, background
+
+15.61% width, 15.61% height
+
+
+save images for web, png: interlaced. jpeg: progressive
