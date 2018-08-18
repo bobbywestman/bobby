@@ -33,9 +33,17 @@ img {
     /*https://stackoverflow.com/questions/31444891/mystery-white-space-underneath-image-tag/31445364#31445364*/
     /*
         img tags default to inline-block
-        - this was giving some extr pixels below the images
+        - this was giving some extra pixels below the images
     */
     display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /**********************************************************/
@@ -57,23 +65,6 @@ img {
     min-height: 100vh;
 
     z-index: -1;
-}
-
-.bgImage {
-    content: "";
-    position: fixed;
-    top: -5%;
-    left: -5%;
-    right: -5%;
-    bottom: -5%;
-    z-index: -1;
-    display: block;
-    background-color: #6c6d6d;
-    background: url(images/bg.jpg) no-repeat center center;
-    background-size:cover;
-    filter: blur(3px);
-
-    transform: translate3d(0,0,0);
 }
 
 /**********************************************************/
@@ -146,6 +137,16 @@ img {
     width: 100%;
 }
 
+.projectsSubTitle {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    width: 100%;
+}
+
 .projectsGrid {
     margin-top: 30px;
     width: 100%;
@@ -155,6 +156,17 @@ img {
     content: "";
     clear: both;
     display: table;
+}
+
+.projectImgContainer {
+    float: left;
+    width: 33.333333%;
+    padding: 15px;
+}
+
+.projectImg {
+    width:100%;
+    background-color: #efefef38;
 }
 
 .focusedProject {
@@ -174,28 +186,52 @@ img {
     height: 100%;
 }
 
-.projectImgContainer {
-    float: left;
-    width: 33.333333%;
-    padding: 15px;
+.focusedProjectDetails a {
+    color: white;
+    font-style: italic;
 }
 
-.projectImg {
-    width:100%;
-    background-color: #efefef38;
+.focusedProjectDetails .name {
+    padding-top: 15px;
+    padding-left: 15px;
+    /*margin-top: 10%;*/
+
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: white;
 }
 
-/*
-div {
-    opacity:1;
-    transition: all 2s ease-out;
+.focusedProjectDetails .description {
+    padding-top: 15px;
+    padding-left: 15px;
+
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
 }
 
-.hidden {
-    display: none;
-    opacity: 0;
+.focusedProjectDetails .link {
+    padding-top: 15px;
+    padding-left: 15px;
+
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
 }
-*/
+
+.focusedProjectDetails .tools {
+    padding-top: 15px;
+    padding-left: 15px;
+
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+}
+
 
 /**********************************************************/
 /*contact*/

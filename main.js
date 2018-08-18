@@ -65,6 +65,12 @@ var setupProjectTiles = function() {
 var aProjectIsCurrentlySelected = false;
 
 var projectClicked = function(project) {
+    document.getElementById('projects').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center',
+    });
+
     var grid = document.getElementById("projectsGrid");
     var focus = document.getElementById("focusedProject");
 
