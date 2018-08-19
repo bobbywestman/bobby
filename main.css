@@ -103,6 +103,10 @@ a:hover {
     bottom: 10%;
 }
 
+.bow:hover {
+    cursor: pointer;
+}
+
 .fadeInTitle { 
     /*set delay to 0s here, will be handled in js*/
     animation: fadeIn 3s ease 0s 1 forwards;
@@ -161,12 +165,21 @@ a:hover {
 .projectImgContainer {
     float: left;
     width: 33.333333%;
-    padding: 15px;
+    padding: 10px;
 }
 
 .projectImg {
+    padding: 5px;
     width:100%;
     background-color: #efefef38;
+}
+
+.projectImg:hover{
+    padding: 0px;
+    border-style: solid;
+    border-color: #ffffffaa;
+    border-width: 5px;
+    cursor: pointer;
 }
 
 .focusedProject {
@@ -257,7 +270,7 @@ a:hover {
     color: white;
 }
 
-.arrow2 {
+.contactArrow {
     position: absolute; 
     text-align: center;
     right: 50%;
@@ -266,6 +279,10 @@ a:hover {
     width: 60px;
 
     top: 10%;
+}
+
+.contactArrow:hover {
+    cursor: pointer;
 }
 
 .arrows {

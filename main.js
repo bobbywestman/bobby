@@ -45,9 +45,31 @@ var projects = [
 /**********************************************************/
 window.onload = function() {
     startFadeInElements();
+    setupArrowClickActions();
 
     setupProjectTiles();
     setupProjectTilesClickActions();
+};
+
+var setupArrowClickActions = function() {
+    var bow = document.getElementById("bow");
+    var contactArrow = document.getElementById("contactArrow");
+
+    bow.onclick = function() {
+        document.getElementById("projects").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
+    }
+
+    contactArrow.onclick = function() {
+        document.getElementById("contact").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
+    }
 };
 
 /**********************************************************/
