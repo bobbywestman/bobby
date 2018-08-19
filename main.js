@@ -46,14 +46,26 @@ var projects = [
 window.onload = function() {
     startFadeInElements();
 
+    setupProjectTiles();
     setupProjectTilesClickActions();
 };
 
 /**********************************************************/
 /*projects*/
 /**********************************************************/
+var setupProjectTiles = function() {
+    var projectsGrid = document.getElementById("projectsGrid");
+
+    for(var p in projects) {
+        projectsGrid.innerHTML += "<div class=\"projectImgContainer\" id=\""
+            + projects[p].id
+            + "\"><img src=\"images/"
+            + projects[p].id
+            + ".png\" class=\"projectImg\"></div>";
+    }
+};
+
 var setupProjectTilesClickActions = function() {
-    //add click action on each tile
     for(var p in projects) {
         var tile = document.getElementById(projects[p].id);
 
@@ -115,7 +127,7 @@ var projectClicked = function(project) {
 };
 
 var scrollToProjects = function() {
-    //need this timeout to let focusedProject div finish laying out
+    //need this timeout to let focusedProject div finish laying out, so that center is calculated correctly
     setTimeout(scrollToProjectsScroll, 150);
 };
 
