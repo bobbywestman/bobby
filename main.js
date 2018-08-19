@@ -9,7 +9,7 @@ var projects = [
         link: "https://codepen.io/bobbywestman/pen/YjVPZz?editors=1111",
         tools: [
             {
-                tool:"Three.js",
+                name:"Three.js",
                 link:"https://threejs.org/"
             }
         ]
@@ -21,7 +21,7 @@ var projects = [
         link: "https://play.google.com/store/apps/details?id=com.robertwestman.flappykanye",
         tools: [
             {
-                tool:"Stencyl",
+                name:"Stencyl",
                 link:"http://www.stencyl.com/"
             }
         ]
@@ -33,7 +33,7 @@ var projects = [
         link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
         tools: [
             {
-                tool:"Stencyl",
+                name:"Stencyl",
                 link:"http://www.stencyl.com/"
             }
         ]
@@ -44,15 +44,16 @@ var projects = [
 /*init*/
 /**********************************************************/
 window.onload = function() {
-    setTimeout(fadeInTitle, 650);
+    startFadeInElements();
 
-    setupProjectTiles();
+    setupProjectTilesClickActions();
 };
 
 /**********************************************************/
 /*projects*/
 /**********************************************************/
-var setupProjectTiles = function() {
+var setupProjectTilesClickActions = function() {
+    //add click action on each tile
     for(var p in projects) {
         var tile = document.getElementById(projects[p].id);
 
@@ -65,19 +66,17 @@ var setupProjectTiles = function() {
 var aProjectIsCurrentlySelected = false;
 
 var projectClicked = function(project) {
-    document.getElementById('projects').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'center',
-    });
+    scrollToProjects();
 
     var grid = document.getElementById("projectsGrid");
     var focus = document.getElementById("focusedProject");
+    var focusedProjectGrid = document.getElementById("focusedProjectGrid");
 
     if(aProjectIsCurrentlySelected) {
         aProjectIsCurrentlySelected = false;
 
-        focus.removeChild(focus.firstChild);
+        //remove clone
+        focusedProjectGrid.removeChild(document.getElementById("clone"));
 
         focus.style.display = "none";
         grid.style.display = "block";
@@ -85,28 +84,47 @@ var projectClicked = function(project) {
     else {
         aProjectIsCurrentlySelected = true;
         
+        //clone the selected project tile
         var copy = document.getElementById(project.id).cloneNode(true);
-        copy.style.removeProperty("float");
-        copy.style.float = "";
+        copy.setAttribute("id", "clone");
 
-        //reattach click event on clone.. this is messy
+        //reattach click event on clone since .cloneNode() removes them..
+        //this is messy
         copy.onclick = (function(project) {
             return function() { projectClicked(projects[project]); }
         })(project);
-        focus.insertBefore(copy, focus.firstChild);
+
+        //add clone
+        focusedProjectGrid.insertBefore(copy, document.getElementById("focusedProjectInsert"));
         
         grid.style.display = "none";
-        focus.style.display = "flex";
+        focus.style.display = "block";
     }
 };
 
+var scrollToProjects = function() {
+    setTimeout(scrollToProjectsScroll, 100);
+};
+
+var scrollToProjectsScroll = function() {
+    document.getElementById('projects').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
+    });
+};
+    
 /**********************************************************/
 /*animations*/
 /**********************************************************/
+var startFadeInElements = function () {
+    setTimeout(fadeInTitle, 650);
+    setTimeout(fadeInArrow, 1500);
+};
+
 var fadeInTitle = function() {
     var title = document.getElementById("title");
     title.classList.add("fadeInTitle");
-    setTimeout(fadeInArrow, 850);
 };
 
 var fadeInArrow = function() {

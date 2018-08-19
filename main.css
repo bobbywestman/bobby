@@ -175,15 +175,18 @@ a:hover {
     width: 100%;
 }
 
-.focusedProjectContainer {
-    width: 66.666666%;
-    padding: 15px;
+.focusedProjectGrid {
+    display: flex;
+}
+
+.emptySpace {
+    width: 33.333333%;
 }
 
 .focusedProjectDetails {
     width:100%;
-    background-color: #efefef38;
     height: 100%;
+    text-align: center;
 }
 
 .focusedProjectDetails a {
@@ -192,10 +195,6 @@ a:hover {
 }
 
 .focusedProjectDetails .name {
-    padding-top: 15px;
-    padding-left: 15px;
-    /*margin-top: 10%;*/
-
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 40px;
     font-weight: 300;
@@ -203,29 +202,13 @@ a:hover {
 }
 
 .focusedProjectDetails .description {
-    padding-top: 15px;
-    padding-left: 15px;
-
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
     font-weight: 300;
     color: white;
 }
 
-.focusedProjectDetails .link {
-    padding-top: 15px;
-    padding-left: 15px;
-
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    color: white;
-}
-
 .focusedProjectDetails .tools {
-    padding-top: 15px;
-    padding-left: 15px;
-
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 20px;
     font-weight: 300;
