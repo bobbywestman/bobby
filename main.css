@@ -199,9 +199,15 @@ a:hover {
     font-size: 40px;
     font-weight: 300;
     color: white;
+    font-style: normal;
+}
+
+.name #focusedProjectNameLink {
+    font-style: normal;
 }
 
 .focusedProjectDetails .description {
+    padding-top: 15px;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
     font-weight: 300;
@@ -209,6 +215,7 @@ a:hover {
 }
 
 .focusedProjectDetails .tools {
+    padding-top: 15px;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 20px;
     font-weight: 300;
