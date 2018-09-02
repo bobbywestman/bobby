@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="main.css" type="text/css">
 
     <!--todo: remove unused imports-->
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i|Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i|Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
 
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Alegreya+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,100i,300,300i|Alegreya+Sans:100,100i,300,300i" rel="stylesheet">
 </head>
 <body>
     <div id="bg" class="bg"></div>
@@ -45,23 +45,32 @@
             </div>
             
             <div class="focusedProjectDetails">
-                <div class="name">
-                    <a target="_blank" rel="noopener noreferrer" id="focusedProjectNameLink"></a>
-                </div>
+                <div class="name" id="focusedProjectName"></div>
                 <div class="description" id="focusedProjectDescription"></div>
                 <div class="tools" id="focusedProjectTools"></div>
+                <div class="link" id="focusedProjectLink"></div>
             </div>
+        </div>
+
+        <div class="arrowContainer">
+            <img src="images/arrow.png" id="aboutArrow" class="arrow">
         </div>
     </div>
 
-    <div class="about">
-        <div id="about" class="about">
+    <div id="about" class="about">
+        <div id="aboutTitle" class="aboutTitle">
+            About
+        </div>
+        <div id="aboutSubTitle" class="aboutSubTitle">
+            Just a little bit about me
+        </div>
 
+        <div class="arrowContainer">
+            <img src="images/arrow.png" id="contactArrow" class="arrow">
         </div>
     </div>
 
     <div class="contact" id="contact">
-        <img src="images/arrow.png" id="contactArrow" class="contactArrow">
 
         <div class="contactInfo">
             <div class="contactTitle">

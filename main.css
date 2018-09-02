@@ -91,43 +91,12 @@ a:hover {
     width:100%;
 }
 
-.bow {
-    position: absolute; 
-    text-align: center;
-    right: 50%;
-    transform: translate(50%, 0%);
-    color: white;
-    opacity: 0;
-    width: 60px;
-
-    bottom: 10%;
-}
-
-.bow:hover {
-    cursor: pointer;
-}
-
-.fadeInTitle { 
-    /*set delay to 0s here, will be handled in js*/
-    animation: fadeIn 3s ease 0s 1 forwards;
-}
-
-.fadeInArrow { 
-    /*set delay to 0s here, will be handled in js*/
-    animation: fadeIn 2s ease 0s 1 forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
 /**********************************************************/
 /*projects*/
 /**********************************************************/
 .projects {
     position: relative;
-    margin-top: 10%;
+    margin-top: 20%;
     width: 70%;
     margin-left: 15%;
 }
@@ -215,10 +184,6 @@ a:hover {
     font-style: normal;
 }
 
-.name #focusedProjectNameLink {
-    font-style: normal;
-}
-
 .focusedProjectDetails .description {
     padding-top: 15px;
     font-family: 'Alegreya Sans', sans-serif;
@@ -235,6 +200,44 @@ a:hover {
     color: white;
 }
 
+.focusedProjectDetails .link {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    padding-top: 15px;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    font-style: normal;
+}
+
+/**********************************************************/
+/*about*/
+/**********************************************************/
+
+.about {
+    position: relative;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 30%;
+}
+
+.aboutTitle {
+    text-align: center;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: white;
+    width: 100%;
+}
+
+.aboutSubTitle {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    width: 100%;
+}
 
 /**********************************************************/
 /*contact*/
@@ -244,7 +247,6 @@ a:hover {
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 10%;
 }
 
 .contactInfo {
@@ -270,18 +272,41 @@ a:hover {
     color: white;
 }
 
-.contactArrow {
+/**********************************************************/
+/*arrows*/
+/**********************************************************/
+.bow {
     position: absolute; 
     text-align: center;
     right: 50%;
     transform: translate(50%, 0%);
     color: white;
+    opacity: 0;
     width: 60px;
 
-    top: 10%;
+    bottom: 10%;
 }
 
-.contactArrow:hover {
+.bow:hover {
+    cursor: pointer;
+}
+
+.arrowContainer {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.arrow {
+    position: relative; 
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: white;
+    width: 60px;
+}
+
+.arrow:hover {
     cursor: pointer;
 }
 
@@ -294,4 +319,22 @@ a:hover {
     width: 60px;
 
     bottom: 10%;
+}
+
+/**********************************************************/
+/*animations*/
+/**********************************************************/
+.fadeInTitle { 
+    /*set delay to 0s here, will be handled in js*/
+    animation: fadeIn 3s ease 0s 1 forwards;
+}
+
+.fadeInArrow { 
+    /*set delay to 0s here, will be handled in js*/
+    animation: fadeIn 2s ease 0s 1 forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

@@ -7,6 +7,7 @@ var projects = [
         name: "Music Visualizer",
         description: "A music visualization experiment in 3D",
         link: "https://codepen.io/bobbywestman/pen/YjVPZz",
+        source: "Codepen",
         tools: [
             {
                 name: "Three.js",
@@ -19,6 +20,7 @@ var projects = [
         name: "Flappy Kanye",
         description: "A Flappy Bird clone featuring Kanye West",
         link: "https://play.google.com/store/apps/details?id=com.robertwestman.flappykanye",
+        source: "Google Play",
         tools: [
             {
                 name: "Stencyl",
@@ -31,6 +33,7 @@ var projects = [
         name: "Aethera",
         description: "A gravity based game in an ambient environment",
         link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
+        source: "Google Play",
         tools: [
             {
                 name: "Stencyl",
@@ -53,10 +56,19 @@ window.onload = function() {
 
 var setupArrowClickActions = function() {
     var bow = document.getElementById("bow");
+    var aboutArrow = document.getElementById("aboutArrow");
     var contactArrow = document.getElementById("contactArrow");
 
     bow.onclick = function() {
         document.getElementById("projects").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
+    }
+
+    aboutArrow.onclick = function() {
+        document.getElementById("about").scrollIntoView({
             behavior: "smooth",
             block: "center",
             inline: "center",
@@ -75,6 +87,8 @@ var setupArrowClickActions = function() {
 /**********************************************************/
 /*projects*/
 /**********************************************************/
+var aProjectIsCurrentlySelected = false;
+
 var setupProjectTiles = function() {
     var projectsGrid = document.getElementById("projectsGrid");
 
@@ -88,6 +102,7 @@ var setupProjectTiles = function() {
 };
 
 var setupProjectTilesClickActions = function() {
+    //actions on project tiles
     for(var p in projects) {
         var tile = document.getElementById(projects[p].id);
 
@@ -95,17 +110,34 @@ var setupProjectTilesClickActions = function() {
             return function() { projectClicked(projects[p]); }
         })(p);
     }
-};
 
-var aProjectIsCurrentlySelected = false;
+    //actions on title
+    var projectsTitle = document.getElementById("projectsTitle");
+    projectsTitle.onclick = function() {
+        projectsTitle.style.cursor = "default";
+
+        if(aProjectIsCurrentlySelected) {
+            projectClicked();
+        }
+    };
+    projectsTitle.onmouseover = function() {
+        if(aProjectIsCurrentlySelected) {
+            projectsTitle.style.cursor = "pointer";
+        }
+        else {
+            projectsTitle.style.cursor = "default";
+        }
+    };
+};
 
 var projectClicked = function(project) {
     var grid = document.getElementById("projectsGrid");
     var focus = document.getElementById("focusedProject");
     var focusedProjectGrid = document.getElementById("focusedProjectGrid");
-    var name = document.getElementById("focusedProjectNameLink");
+    var name = document.getElementById("focusedProjectName");
     var description = document.getElementById("focusedProjectDescription");
     var tools = document.getElementById("focusedProjectTools");
+    var link = document.getElementById("focusedProjectLink");
 
     if(aProjectIsCurrentlySelected) {
         aProjectIsCurrentlySelected = false;
@@ -126,8 +158,9 @@ var projectClicked = function(project) {
         })(project);
         focusedProjectGrid.insertBefore(copy, document.getElementById("focusedProjectInsert"));
         
+        //ADD DIV UNDERNEATH MADE WITH: links , ex "SEE IT ON CODEPEN", "SEE IT ON GOOGLE PLAY", 
+
         name.innerHTML = project.name;
-        name.setAttribute("href", project.link);
         description.innerHTML = project.description;
         tools.innerHTML = "Made with: ";
         for (var t in project.tools) {
@@ -140,6 +173,11 @@ var projectClicked = function(project) {
                 tools.innerHTML += ", ";
             }
         }
+        link.innerHTML = "See it on: ";
+        link.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\""
+                + project.link
+                + "\">" + project.source
+                + "</a>";
 
         grid.style.display = "none";
         focus.style.display = "block";
@@ -154,7 +192,6 @@ var scrollToProjects = function() {
 };
 
 var currentScrollPosition;
-
 var scrollToProjectsScroll = function() {
     if(aProjectIsCurrentlySelected) {
         currentScrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
@@ -166,7 +203,7 @@ var scrollToProjectsScroll = function() {
         });
     }
     else {
-        //not sure if i like this on/off
+        // not sure if i like this on/off
 
         // window.scroll({
         //     top: currentScrollPosition, 
