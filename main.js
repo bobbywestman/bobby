@@ -56,24 +56,24 @@ window.onload = function() {
 
 var setupArrowClickActions = function() {
     var bow = document.getElementById("bow");
-    var aboutArrow = document.getElementById("aboutArrow");
+    var projectsArrow = document.getElementById("projectsArrow");
     var contactArrow = document.getElementById("contactArrow");
 
     bow.onclick = function() {
-        document.getElementById("projects").scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-        });
-    }
-
-    aboutArrow.onclick = function() {
         document.getElementById("about").scrollIntoView({
             behavior: "smooth",
             block: "center",
             inline: "center",
         });
-    }
+    };
+
+    projectsArrow.onclick = function() {
+        document.getElementById("projects").scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
+    };
 
     contactArrow.onclick = function() {
         document.getElementById("contact").scrollIntoView({
@@ -81,7 +81,7 @@ var setupArrowClickActions = function() {
             block: "center",
             inline: "center",
         });
-    }
+    };
 };
 
 /**********************************************************/

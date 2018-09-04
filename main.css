@@ -92,6 +92,46 @@ a:hover {
 }
 
 /**********************************************************/
+/*about*/
+/**********************************************************/
+
+.about {
+    position: relative;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.aboutTitle {
+    text-align: center;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: white;
+    width: 100%;
+}
+
+.aboutSubTitle {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    width: 100%;
+}
+
+.aboutContent {
+    padding-top: 45px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/**********************************************************/
 /*projects*/
 /**********************************************************/
 .projects {
@@ -207,36 +247,6 @@ a:hover {
     font-weight: 300;
     color: white;
     font-style: normal;
-}
-
-/**********************************************************/
-/*about*/
-/**********************************************************/
-
-.about {
-    position: relative;
-    width: 70%;
-    margin-left: 15%;
-    margin-top: 30%;
-}
-
-.aboutTitle {
-    text-align: center;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-    color: white;
-    width: 100%;
-}
-
-.aboutSubTitle {
-    margin-top: 15px;
-    text-align: center;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    color: white;
-    width: 100%;
 }
 
 /**********************************************************/
