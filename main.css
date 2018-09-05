@@ -115,20 +115,24 @@ a:hover {
     margin-top: 15px;
     text-align: center;
     font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 30px;
+    font-weight: 100;
     color: white;
     width: 100%;
 }
 
 .aboutContent {
-    padding-top: 45px;
+    margin-top: 45px;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 24px;
     font-weight: 300;
     color: white;
     text-align: center;
-    line-height: 1.5;
+    /*line-height: 1.5;*/
+}
+
+.aboutContentItem {
+    margin-top: 25px;
 }
 
 /**********************************************************/
@@ -154,8 +158,8 @@ a:hover {
     margin-top: 15px;
     text-align: center;
     font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 30px;
+    font-weight: 100;
     color: white;
     width: 100%;
 }
@@ -217,6 +221,7 @@ a:hover {
 }
 
 .focusedProjectDetails .name {
+    margin-top: 30px;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 40px;
     font-weight: 300;
@@ -225,17 +230,17 @@ a:hover {
 }
 
 .focusedProjectDetails .description {
-    padding-top: 15px;
+    margin-top: 15px;
     font-family: 'Alegreya Sans', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 300;
     color: white;
 }
 
 .focusedProjectDetails .tools {
-    padding-top: 15px;
+    margin-top: 15px;
     font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 300;
     color: white;
 }
@@ -243,7 +248,7 @@ a:hover {
 .focusedProjectDetails .link {
     font-family: 'Alegreya Sans SC', sans-serif;
     padding-top: 15px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 300;
     color: white;
     font-style: normal;
