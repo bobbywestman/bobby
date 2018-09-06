@@ -104,7 +104,10 @@ a:hover {
     position: relative;
 
     margin-left: 15%;
-    margin-top: 10vh;
+    margin-top: 8vh;
+
+    /*use this to add some padding to scroll position*/
+    padding-top: 2vh; 
 
     width: 70%;
 }
@@ -151,7 +154,10 @@ a:hover {
     position: relative;
 
     margin-left: 15%;
-    margin-top: 20vh;
+    margin-top: 18vh;
+
+    /*use this to add some padding to scroll position*/
+    padding-top: 2vh;
 
     width: 70%;
 }
@@ -342,7 +348,7 @@ a:hover {
 }
 
 .arrowContainer {
-    margin-top: 10vh;
+    margin-top: 20vh;
 
     text-align: center;
 }

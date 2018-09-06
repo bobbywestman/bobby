@@ -59,24 +59,46 @@ var setupArrowClickActions = function() {
     var projectsArrow = document.getElementById("projectsArrow");
     var contactArrow = document.getElementById("contactArrow");
 
+    var about = document.getElementById("about");
+    var projects = document.getElementById("projects");
+    var contact = document.getElementById("contact");
+
     bow.onclick = function() {
-        document.getElementById("about").scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-        });
+        if(about.offsetHeight > window.innerHeight) {
+            about.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+        }
+        else {
+            about.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+                inline: "center",
+            });
+        }
     };
 
     projectsArrow.onclick = function() {
-        document.getElementById("projects").scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-        });
+        if(projects.offsetHeight > window.innerHeight) {
+            projects.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+        }
+        else {
+            projects.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+                inline: "center",
+            });
+        }
     };
 
     contactArrow.onclick = function() {
-        document.getElementById("contact").scrollIntoView({
+        contact.scrollIntoView({
             behavior: "smooth",
             block: "center",
             inline: "center",
