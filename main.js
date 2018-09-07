@@ -59,50 +59,16 @@ var setupArrowClickActions = function() {
     var projectsArrow = document.getElementById("projectsArrow");
     var contactArrow = document.getElementById("contactArrow");
 
-    var about = document.getElementById("about");
-    var projects = document.getElementById("projects");
-    var contact = document.getElementById("contact");
-
     bow.onclick = function() {
-        if(about.offsetHeight > window.innerHeight) {
-            about.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest",
-            });
-        }
-        else {
-            about.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-                inline: "center",
-            });
-        }
+        scrollToAbout();
     };
 
     projectsArrow.onclick = function() {
-        if(projects.offsetHeight > window.innerHeight) {
-            projects.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest",
-            });
-        }
-        else {
-            projects.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-                inline: "center",
-            });
-        }
+        scrollToProjects();
     };
 
     contactArrow.onclick = function() {
-        contact.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-        });
+        scrollToContacts();
     };
 };
 
@@ -170,6 +136,10 @@ var projectClicked = function(project) {
         grid.style.display = "block";
     }
     else {
+        //summary of below:
+        // - clone the tile that was clicked
+        // - add all details
+
         aProjectIsCurrentlySelected = true;
         
         var copy = document.getElementById(project.id).cloneNode(true);
@@ -180,8 +150,6 @@ var projectClicked = function(project) {
         })(project);
         focusedProjectGrid.insertBefore(copy, document.getElementById("focusedProjectInsert"));
         
-        //ADD DIV UNDERNEATH MADE WITH: links , ex "SEE IT ON CODEPEN", "SEE IT ON GOOGLE PLAY", 
-
         name.innerHTML = project.name;
         description.innerHTML = project.description;
         tools.innerHTML = "Made with: ";
@@ -205,36 +173,61 @@ var projectClicked = function(project) {
         focus.style.display = "block";
     }
 
-    scrollToProjects();
-};
-
-var scrollToProjects = function() {
     //need this timeout to let focusedProject div finish laying out, so that center is calculated correctly
-    setTimeout(scrollToProjectsScroll, 150);
+    setTimeout(scrollToProjects, 150);
 };
 
-var currentScrollPosition;
-var scrollToProjectsScroll = function() {
-    if(aProjectIsCurrentlySelected) {
-        currentScrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+/**********************************************************/
+/*scrolling*/
+/**********************************************************/
+var scrollToProjects = function() {
+    var projects = document.getElementById("projects");
 
-        document.getElementById("projects").scrollIntoView({
+    if(projects.offsetHeight > window.innerHeight) {
+        projects.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
+        });
+    }
+    else {
+        projects.scrollIntoView({
             behavior: "smooth",
             block: "center",
             inline: "center",
         });
     }
-    else {
-        // not sure if i like this on/off
-
-        // window.scroll({
-        //     top: currentScrollPosition, 
-        //     left: 0, 
-        //     behavior: "smooth"
-        // });
-    }
 };
-    
+
+var scrollToContacts = function() {
+    var contact = document.getElementById("contact");
+
+    contact.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+    });
+}
+
+var scrollToAbout = function() {
+    var about = document.getElementById("about");
+
+    if(about.offsetHeight > window.innerHeight) {
+        about.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
+        });
+    }
+    else {
+        about.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+        });
+    }
+}
+
 /**********************************************************/
 /*animations*/
 /**********************************************************/
