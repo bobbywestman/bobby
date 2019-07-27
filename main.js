@@ -71,6 +71,10 @@ window.onload = function() {
     setupProjectTilesClickActions();
 };
 
+window.onresize = function() {
+    // console.log("width: " + window.innerWidth);
+};
+
 var setupArrowClickActions = function() {
     var bow = document.getElementById("bow");
     var projectsArrow = document.getElementById("projectsArrow");
