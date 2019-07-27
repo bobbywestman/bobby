@@ -3,15 +3,15 @@
 /**********************************************************/
 var projects = [
     {
-        id: "musicVisualizer",
-        name: "Music Visualizer",
-        description: "A music visualization experiment in 3D",
-        link: "https://codepen.io/bobbywestman/pen/YjVPZz",
-        source: "Codepen",
+        id: "aethera",
+        name: "Aethera",
+        description: "A gravity based game in an ambient environment",
+        link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
+        source: "Google Play",
         tools: [
             {
-                name: "Three.js",
-                link: "https://threejs.org/"
+                name: "Stencyl",
+                link: "http://www.stencyl.com/"
             }
         ]
     },
@@ -29,15 +29,32 @@ var projects = [
         ]
     },
     {
-        id: "aethera",
-        name: "Aethera",
-        description: "A gravity based game in an ambient environment",
-        link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
-        source: "Google Play",
+        id: "musicVisualizer",
+        name: "Music Visualizer",
+        description: "A music visualization experiment in 3D",
+        link: "https://codepen.io/bobbywestman/pen/YjVPZz",
+        source: "Codepen",
         tools: [
             {
-                name: "Stencyl",
-                link: "http://www.stencyl.com/"
+                name: "Three.js",
+                link: "https://threejs.org/"
+            }
+        ]
+    },
+    {
+        id: "mapDraw",
+        name: "MapDraw",
+        description: "An iOS app to draw on maps",
+        link: "https://apps.apple.com/us/app/mapdraw-app/id1471554859",
+        source: "iOS App Store",
+        tools: [
+            {
+                name: "Swift",
+                link: "https://swift.org/"
+            },
+            {
+                name: "Xcode",
+                link: "https://developer.apple.com/xcode/"
             }
         ]
     }
