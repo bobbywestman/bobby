@@ -57,6 +57,19 @@ var projects = [
                 link: "https://developer.apple.com/xcode/"
             }
         ]
+    },
+    {
+        id: "soundcloudExperiments",
+        name: "Music Experiments",
+        description: "Music production experiments exploring different genres",
+        link: "https://soundcloud.com/bobbywestman/sets/experiments",
+        source: "Soundcloud",
+        tools: [
+            {
+                name: "FL Studio",
+                link: "https://www.image-line.com/flstudio/"
+            }
+        ]
     }
 ];
 
