@@ -2,19 +2,19 @@
 /*data*/
 /**********************************************************/
 var projects = [
-    {
-        id: "aethera",
-        name: "Aethera",
-        description: "A gravity based game in an ambient environment",
-        link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
-        source: "Google Play",
-        tools: [
-            {
-                name: "Stencyl",
-                link: "http://www.stencyl.com/"
-            }
-        ]
-    },
+    // {
+    //     id: "aethera",
+    //     name: "Aethera",
+    //     description: "A gravity based game in an ambient environment",
+    //     link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
+    //     source: "Google Play",
+    //     tools: [
+    //         {
+    //             name: "Stencyl",
+    //             link: "http://www.stencyl.com/"
+    //         }
+    //     ]
+    // },
     {
         id: "flappyKanye",
         name: "Flappy Kanye",
