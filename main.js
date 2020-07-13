@@ -51,10 +51,6 @@ var projects = [
             {
                 name: "Swift",
                 link: "https://swift.org/"
-            },
-            {
-                name: "Xcode",
-                link: "https://developer.apple.com/xcode/"
             }
         ]
     },
@@ -68,6 +64,36 @@ var projects = [
             {
                 name: "FL Studio",
                 link: "https://www.image-line.com/flstudio/"
+            }
+        ]
+    },
+    {
+        id: "techRep",
+        name: "Seaman Corporation - Site Visits",
+        description: "An iOS app to manage field reports for Seaman Corporation, using Salesforce",
+        tools: [
+            {
+                name: "Swift",
+                link: "https://swift.org/"
+            },
+            {
+                name: "Salesforce iOS SDK",
+                link: "https://github.com/forcedotcom/SalesforceMobileSDK-iOS"
+            }
+        ]
+    },
+    {
+        id: "approvals",
+        name: "Seaman Corporation - Approvals",
+        description: "An iOS app to manage sales quotes and approvals for Seaman Corporation, using Salesforce",
+        tools: [
+            {
+                name: "Swift",
+                link: "https://swift.org/"
+            },
+            {
+                name: "Salesforce iOS SDK",
+                link: "https://github.com/forcedotcom/SalesforceMobileSDK-iOS"
             }
         ]
     }
@@ -193,11 +219,13 @@ var projectClicked = function(project) {
                 tools.innerHTML += ", ";
             }
         }
-        link.innerHTML = "See it on: ";
-        link.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\""
+        if (project.source) {
+        	link.innerHTML = "See it on: ";
+        	link.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\""
                 + project.link
                 + "\">" + project.source
-                + "</a>";
+                + "</a>";	
+        }
 
         grid.style.display = "none";
         focus.style.display = "block";
