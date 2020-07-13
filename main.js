@@ -225,6 +225,8 @@ var projectClicked = function(project) {
                 + project.link
                 + "\">" + project.source
                 + "</a>";	
+        } else {
+            link.innerHTML = ""
         }
 
         grid.style.display = "none";
