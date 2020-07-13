@@ -6,8 +6,10 @@ var projects = [
     //     id: "aethera",
     //     name: "Aethera",
     //     description: "A gravity based game in an ambient environment",
-    //     link: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera",
-    //     source: "Google Play",
+    //     link: {
+    //         source: "Google Play",
+    //         url: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera"
+    //     },
     //     tools: [
     //         {
     //             name: "Stencyl",
@@ -19,8 +21,10 @@ var projects = [
         id: "flappyKanye",
         name: "Flappy Kanye",
         description: "A Flappy Bird clone featuring Kanye West",
-        link: "https://play.google.com/store/apps/details?id=com.robertwestman.flappykanye",
-        source: "Google Play",
+        link: {
+            source: "Google Play",
+            url: "https://play.google.com/store/apps/details?id=com.robertwestman.flappykanye"
+        },
         tools: [
             {
                 name: "Stencyl",
@@ -32,8 +36,10 @@ var projects = [
         id: "musicVisualizer",
         name: "Music Visualizer",
         description: "A music visualization experiment in 3D",
-        link: "https://codepen.io/bobbywestman/pen/YjVPZz",
-        source: "Codepen",
+        link: {
+            source: "Codepen",
+            url: "https://codepen.io/bobbywestman/pen/YjVPZz"
+        },
         tools: [
             {
                 name: "Three.js",
@@ -45,8 +51,10 @@ var projects = [
         id: "mapDraw",
         name: "MapDraw",
         description: "An iOS app to draw on maps",
-        link: "https://apps.apple.com/us/app/mapdraw-app/id1471554859",
-        source: "iOS App Store",
+        link: {
+            source: "iOS App Store",
+            url: "https://apps.apple.com/us/app/mapdraw-app/id1471554859"
+        },
         tools: [
             {
                 name: "Swift",
@@ -58,8 +66,10 @@ var projects = [
         id: "soundcloudExperiments",
         name: "Music Experiments",
         description: "Music production experiments exploring different genres",
-        link: "https://soundcloud.com/bobbywestman/sets/experiments",
-        source: "Soundcloud",
+        link: {
+            source: "Soundcloud",
+            url: "https://soundcloud.com/bobbywestman/sets/experiments"
+        },
         tools: [
             {
                 name: "FL Studio",
@@ -219,11 +229,11 @@ var projectClicked = function(project) {
                 tools.innerHTML += ", ";
             }
         }
-        if (project.source) {
+        if (project.link) {
         	link.innerHTML = "See it on: ";
         	link.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\""
-                + project.link
-                + "\">" + project.source
+                + project.link.url
+                + "\">" + project.link.source
                 + "</a>";	
         } else {
             link.innerHTML = ""
