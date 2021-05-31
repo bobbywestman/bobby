@@ -2,51 +2,6 @@
 /*data*/
 /**********************************************************/
 var projects = [
-    // {
-    //     id: "aethera",
-    //     name: "Aethera",
-    //     description: "A gravity based game in an ambient environment",
-    //     link: {
-    //         source: "Google Play",
-    //         url: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera"
-    //     },
-    //     tools: [
-    //         {
-    //             name: "Stencyl",
-    //             link: "http://www.stencyl.com/"
-    //         }
-    //     ]
-    // },
-    {
-        id: "flappyKanye",
-        name: "Flappy Kanye",
-        description: "A Flappy Bird clone featuring Kanye West",
-        link: {
-            source: "Google Play",
-            url: "https://play.google.com/store/apps/details?id=com.robertwestman.flappykanye"
-        },
-        tools: [
-            {
-                name: "Stencyl",
-                link: "http://www.stencyl.com/"
-            }
-        ]
-    },
-    {
-        id: "musicVisualizer",
-        name: "Music Visualizer",
-        description: "A music visualization experiment in 3D",
-        link: {
-            source: "Codepen",
-            url: "https://codepen.io/bobbywestman/pen/YjVPZz"
-        },
-        tools: [
-            {
-                name: "Three.js",
-                link: "https://threejs.org/"
-            }
-        ]
-    },
     {
         id: "mapDraw",
         name: "MapDraw",
@@ -63,17 +18,17 @@ var projects = [
         ]
     },
     {
-        id: "soundcloudExperiments",
-        name: "Music Experiments",
-        description: "Music production experiments exploring different genres",
+        id: "musicVisualizer",
+        name: "Music Visualizer",
+        description: "A music visualization experiment in 3D",
         link: {
-            source: "Soundcloud",
-            url: "https://soundcloud.com/bobbywestman/sets/experiments"
+            source: "Codepen",
+            url: "https://codepen.io/bobbywestman/pen/YjVPZz"
         },
         tools: [
             {
-                name: "FL Studio",
-                link: "https://www.image-line.com/flstudio/"
+                name: "Three.js",
+                link: "https://threejs.org/"
             }
         ]
     },
@@ -104,6 +59,53 @@ var projects = [
             {
                 name: "Salesforce iOS SDK",
                 link: "https://github.com/forcedotcom/SalesforceMobileSDK-iOS"
+            }
+        ]
+    },
+    {
+        id: "aethera",
+        name: "Aethera",
+        description: "A gravity based game in an ambient environment",
+        link: {
+            source: "Youtube",
+            url: "https://www.youtube.com/watch?v=nBBad57a0EU"
+            // url: "https://play.google.com/store/apps/details?id=com.robertwestman.aethera"
+        },
+        tools: [
+            {
+                name: "Stencyl",
+                link: "http://www.stencyl.com/"
+            }
+        ]
+    },
+    {
+        id: "flappyKanye",
+        name: "Flappy Kanye",
+        description: "A Flappy Bird clone featuring Kanye West",
+        link: {
+            source: "Youtube",
+            url: "https://www.youtube.com/watch?v=c83kz25ZB3s"
+            // url: "https://play.google.com/store/apps/details?id=com.robertwestman.flappykanye"
+        },
+        tools: [
+            {
+                name: "Stencyl",
+                link: "http://www.stencyl.com/"
+            }
+        ]
+    },
+    {
+        id: "soundcloudExperiments",
+        name: "Music Experiments",
+        description: "Music production experiments exploring different genres",
+        link: {
+            source: "Soundcloud",
+            url: "https://soundcloud.com/bobbywestman/sets/experiments"
+        },
+        tools: [
+            {
+                name: "FL Studio",
+                link: "https://www.image-line.com/flstudio/"
             }
         ]
     }
