@@ -17,21 +17,21 @@ var projects = [
             }
         ]
     },
-    {
-        id: "musicVisualizer",
-        name: "Music Visualizer",
-        description: "A music visualization experiment in 3D",
-        link: {
-            source: "Codepen",
-            url: "https://codepen.io/bobbywestman/pen/YjVPZz"
-        },
-        tools: [
-            {
-                name: "Three.js",
-                link: "https://threejs.org/"
-            }
-        ]
-    },
+//     {
+//         id: "musicVisualizer",
+//         name: "Music Visualizer",
+//         description: "A music visualization experiment in 3D",
+//         link: {
+//             source: "Codepen",
+//             url: "https://codepen.io/bobbywestman/pen/YjVPZz"
+//         },
+//         tools: [
+//             {
+//                 name: "Three.js",
+//                 link: "https://threejs.org/"
+//             }
+//         ]
+//     },
     {
         id: "techRep",
         name: "Seaman Corporation - Site Visits",
@@ -94,21 +94,21 @@ var projects = [
             }
         ]
     },
-    {
-        id: "soundcloudExperiments",
-        name: "Music Experiments",
-        description: "Music production experiments exploring different genres",
-        link: {
-            source: "Soundcloud",
-            url: "https://soundcloud.com/bobbywestman/sets/experiments"
-        },
-        tools: [
-            {
-                name: "FL Studio",
-                link: "https://www.image-line.com/flstudio/"
-            }
-        ]
-    }
+//     {
+//         id: "soundcloudExperiments",
+//         name: "Music Experiments",
+//         description: "Music production experiments exploring different genres",
+//         link: {
+//             source: "Soundcloud",
+//             url: "https://soundcloud.com/bobbywestman/sets/experiments"
+//         },
+//         tools: [
+//             {
+//                 name: "FL Studio",
+//                 link: "https://www.image-line.com/flstudio/"
+//             }
+//         ]
+//     }
 ];
 
 /**********************************************************/
