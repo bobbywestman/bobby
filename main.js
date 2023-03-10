@@ -94,21 +94,21 @@ var projects = [
             }
         ]
     },
-//     {
-//         id: "soundcloudExperiments",
-//         name: "Music Experiments",
-//         description: "Music production experiments exploring different genres",
-//         link: {
-//             source: "Soundcloud",
-//             url: "https://soundcloud.com/bobbywestman/sets/experiments"
-//         },
-//         tools: [
-//             {
-//                 name: "FL Studio",
-//                 link: "https://www.image-line.com/flstudio/"
-//             }
-//         ]
-//     }
+    {
+        id: "soundcloudExperiments",
+        name: "Music Experiments",
+        description: "Music production experiments exploring different genres",
+        link: {
+            source: "Soundcloud",
+            url: "https://soundcloud.com/bobbywestman/sets/experiments"
+        },
+        tools: [
+            {
+                name: "FL Studio",
+                link: "https://www.image-line.com/flstudio/"
+            }
+        ]
+    }
 ];
 
 /**********************************************************/
