@@ -1,466 +1,250 @@
-/**********************************************************/
-/*notes*/
-/**********************************************************/
-
-/*
-animation: name duration timing delay iterations direction fill-mode play-state
-defaults: none 0 ease 0 1 normal none running
-*/
-
-/**********************************************************/
-/*globals*/
-/**********************************************************/
-/*::-webkit-scrollbar {
-    display: none;
-}*/
-
-* {
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-html {
-    /*https://developers.google.com/web/updates/2016/12/url-bar-resizing*/
-    /*  
-        use vh unit for heights: 
-            - on android chrome: spans entire view as if url bar is hidden (think safari on iphone does the same thing according to above link -- untested) 
-            - this fix prevents the background jumping around when scrolling on a mobile device 
-        
-        use % units for widths:
-            - or else a horizontal scrollbar will show up
-
-        Do this for `body` too
-    */
-    width: 100%;
-    height: 100vh;
-
-    background-color: #46545E;
-    z-index: -2;
+.social-link, .social-link * {
+    user-select: text;
+    -webkit-user-select: text;
 }
 
-body {
-    width: 100%;
-    height: 100vh;
-}
-
-img {
-    /*https://stackoverflow.com/questions/31444891/mystery-white-space-underneath-image-tag/31445364#31445364*/
-    /*
-        img tags default to inline-block
-        - this was giving some extra pixels below the images
-    */
-    display: block;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/**********************************************************/
-/*background image*/
-/**********************************************************/
-.bg {
-    position: fixed;
-    
-    bottom: 0vh;
-    left: 0%;
-    top: auto;
-    right: auto;
-
-    min-width: 100%;
-    min-height: 100vh;
-
-    background: url(images/bg.jpg) no-repeat;
-    background-color: #46545E;
-    background-size: cover;
-    background-position: left;
-
-    z-index: -1;
-}
-
-/**********************************************************/
-/*title screen*/
-/**********************************************************/
-.titleScreen {
-    position: relative;
-
-    width: 100%;
-    height: 100vh;
-}
-
-.title {
-    position: absolute; 
-
-    bottom: 50%;
-    transform: translate(0%, 50%);
-
-    width: 100%;
-
-    text-align: center;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 75px;
-    font-weight: 100;
-
-    color: white;
-    opacity: 0;
-}
-
-/**********************************************************/
-/*about*/
-/**********************************************************/
-.about {
-    position: relative;
-
-    margin-left: 15%;
-    margin-top: 8vh;
-
-    /*use this to add some padding to scroll position*/
-    padding-top: 2vh; 
-
-    width: 70%;
-}
-
-.aboutTitle {
-    text-align: center;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-
-    color: white;
-}
-
-.aboutSubTitle {
-    margin-top: 1vh;
-
-    text-align: center;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 30px;
-    font-weight: 100;
-
-    color: white;
-}
-
-.aboutContent {
-    margin-top: 3vh;
-
-    text-align: center;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-
-    color: white;
-}
-
-.aboutContentItem {
-    margin-top: 3vh;
-}
-
-/**********************************************************/
-/*projects*/
-/**********************************************************/
-.projects {
-    position: relative;
-
-    margin-left: 15%;
-    margin-top: 18vh;
-
-    /*use this to add some padding to scroll position*/
-    padding-top: 2vh;
-
-    width: 70%;
-}
-
-.projectsTitle {
-    text-align: center;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-
-    color: white;
-}
-
-.projectsSubTitle {
-    margin-top: 1vh;
-
-    text-align: center;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 30px;
-    font-weight: 100;
-
-    color: white;
-}
-
-.projectsGrid {
-    margin-top: 3vh;
-
-    width: 100%;
-}
-
-.projectsGrid::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.projectImgContainer {
-    float: left;
-
-    padding: 10px;
-
-    width: 33.333333%;
-}
-
-.projectImg {
-    padding: 5px;
-
-    width:100%;
-
-    background-color: #efefef38;
-}
-
-.projectImg:hover{
-    padding: 0px;
-
-    border-style: solid;
-    border-color: #ffffffaa;
-    border-width: 5px;
-
-    cursor: pointer;
-}
-
-.focusedProject {
-    display: none;
-
-    margin-top: 3vh;
-
-    width: 100%;
-}
-
-.focusedProjectGrid {
-    display: flex;
-}
-
-.emptySpace {
-    width: 33.333333%;
-}
-
-.focusedProjectDetails {
-    text-align: center;
-}
-
-.focusedProjectDetails a {
-    font-style: italic;
-
-    color: white;
-}
-
-.focusedProjectDetails .name {
-    margin-top: 3vh;
-
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-    font-style: normal;
-
-    color: white;
-}
-
-.focusedProjectDetails .description {
-    margin-top: 3vh;
-
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-
-    color: white;
-}
-
-.focusedProjectDetails .tools {
-    margin-top: 3vh;
-
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-
-    color: white;
-}
-
-.focusedProjectDetails .link {
-    margin-top: 3vh;
-
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-    font-style: normal;
-
-    color: white;
-}
-
-/**********************************************************/
-/*responsive layout*/
-/**********************************************************/
-@media screen and (min-width: 1024px) {
-    .emptySpace {
-        width: 33.333333%;
-    }
-
-    .projectImgContainer {
-        width: 33.333333%;
-    }
-}
-
-@media screen  and (max-width: 1023px) {
-    .emptySpace {
-        width: 25%;
-    }
-
-    .projectImgContainer {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 630px) {
-    .bg {
-        background-position: calc(-630px + 100vw);
-    }
-
-    .emptySpace {
-        width: 25%;
-    }
-
-    .projectImgContainer {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .bg {
-        background-position: calc(-630px + 100vw);
-    }
-
-    .emptySpace {
-        width: 0%;
-    }
-
-    .projectImgContainer {
-        width: 100%;
-    }
-}
-
-/**********************************************************/
-/*contact*/
-/**********************************************************/
-.contact {
-    position: relative;
-
+html, body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    background: #0a0a0a;
+    font-family: 'Inter', system-ui, sans-serif;
 }
 
-.contactInfo {
-    position: absolute;
-
-    bottom: 50%;
-    transform: translate(0%, 50%);
-
-    width:100%;
-
-    text-align: center;
+/* ── Top UI ───────────────────────────────────────────────────────────────── */
+.ui-top {
+    position: fixed;
+    top: calc(1.2rem + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    pointer-events: none;
+    white-space: nowrap;
 }
 
-.contactTitle {
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 40px;
+.name {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(0.8rem, 2.2vw, 1.25rem);
+    font-weight: 340;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        0 4px 24px rgba(0, 0, 0, 0.12);
+    margin-right: -0.32em;
+}
+
+.role {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    font-size: clamp(0.6rem, 1.3vw, 0.72rem);
     font-weight: 300;
-
-    color: white;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+    opacity: 0;
+    will-change: clip-path, opacity;
+    transition: clip-path 0.5s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.contactEmail {
-    margin-top: 1vh;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 30px;
-    font-weight: 100;
-
-    color: white;
+.ui-top .role:first-child {
+    justify-self: end;
+    justify-content: flex-end;
+    clip-path: inset(0 0 0 100%);
 }
 
-/**********************************************************/
-/*arrows*/
-/**********************************************************/
-.bow {
+.ui-top .role:last-child {
+    justify-self: start;
+    clip-path: inset(0 100% 0 0);
+}
+
+.role svg {
+    width: 0.85em;
+    height: 0.85em;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+
+/* ── Social links ─────────────────────────────────────────────────────────── */
+.social {
+    position: fixed;
+    bottom: calc(1.2rem + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.social-link {
+    font-family: 'Clash Display', system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(0.75rem, 1.7vw, 0.95rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: color 0.2s ease;
+    pointer-events: auto;
+}
+
+.social-link:hover { color: #fff; }
+
+.social-link svg {
+    width: 1.3em;
+    height: 1.3em;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.social-left {
+    justify-self: end;
+    justify-content: flex-end;
+}
+
+.social-right {
+    justify-self: start;
+}
+
+.social-label {
+    opacity: 0;
+    will-change: clip-path, opacity;
+    transition: clip-path 0.5s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.social-left .social-label {
+    clip-path: inset(0 0 0 100%);
+}
+
+.social-right .social-label {
+    clip-path: inset(0 100% 0 0);
+}
+
+#stack {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.card {
     position: absolute;
+    left: 50%;
+    top: var(--card-center-y, 50%);
+    overflow: visible;
+    will-change: transform, opacity;
+    touch-action: none;
+}
 
-    bottom: 10vh;
-    right: 50%;
-    transform: translate(50%, 0%);
-    
-    width: 60px;
+.card-inner {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #000;
+}
 
-    text-align: center;
-    color: white;
+.card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.card-thumb {
+    background: #000;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.card-label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: clamp(2.5rem, 13vw, 6rem);
+    font-weight: 750;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    animation: label-hue 11s ease-in-out infinite;
+}
+
+
+.card-label-shadow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: clamp(2.5rem, 13vw, 6rem);
+    font-weight: 750;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    color: transparent;
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.22);
+    mix-blend-mode: multiply;
     opacity: 0;
 }
 
-.bow:hover {
-    cursor: pointer;
+.card-label-strike {
+    position: absolute;
+    left: 0.16em;
+    right: 0.16em;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.048em;
+    background: currentColor;
+    display: none;
 }
 
-.arrowContainer {
-    margin-top: 20vh;
-
-    text-align: center;
+.card-label-shadow .card-label-strike {
+    background: transparent;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.22);
 }
 
-.arrow {
-    position: relative;
-
-    margin-left: 50%;
-    transform: translate(-50%, 0%);
-
-    width: 60px;
-
-    color: white;
-}
-
-.arrow:hover {
-    cursor: pointer;
-}
-
-.arrows {
-    position: absolute; 
-
-    bottom: 10vh;
-    right: 50%;
-    transform: translate(50%, 0%);
-    
-    width: 60px;
-
-    text-align: center;
-    color: white;
-}
-
-/**********************************************************/
-/*animations*/
-/**********************************************************/
-.fadeInTitle { 
-    /*set delay to 0s here, will be handled in js*/
-    animation: fadeIn 3s ease 0s 1 forwards;
-}
-
-.fadeInArrow { 
-    /*set delay to 0s here, will be handled in js*/
-    animation: fadeIn 2s ease 0s 1 forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+@keyframes label-hue {
+    0%   { color: rgb(228, 218, 255); }  /* lavender  */
+    33%  { color: rgb(212, 255, 228); }  /* mint      */
+    66%  { color: rgb(255, 215, 225); }  /* rose      */
+    100% { color: rgb(228, 218, 255); }  /* lavender  */
 }
